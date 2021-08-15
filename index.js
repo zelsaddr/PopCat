@@ -1,5 +1,9 @@
 const puppeteer = require('puppeteer');
 
+const klik = async page => {
+    await page.click("#app > div");
+}
+
 (async () => {
     const browser = await puppeteer.launch({
         headless: false,
@@ -8,7 +12,7 @@ const puppeteer = require('puppeteer');
     const popCatPage = await browser.newPage();
     await popCatPage.goto("https://popcat.click/", {waitUntil: "networkidle2"});
     while(true){
-        await popCatPage.click("#app > div");
+        await klik(popCatPage);
     }
 })();
 
