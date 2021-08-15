@@ -1,10 +1,10 @@
 const puppeteer = require("puppeteer-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 puppeteer.use(StealthPlugin());
-const log = require("single-line-log").stdout;
+const log = require("single-line-log2").stdout;
 const klik = async (page) => {
   await page.click("#app > div");
-  await page.click("#app > div", { button: "right" });
+  await page.click("#app > div");
 };
 
 (async () => {
