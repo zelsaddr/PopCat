@@ -2,6 +2,7 @@ const puppeteer = require('puppeteer');
 
 const klik = async page => {
     await page.click("#app > div");
+    await page.click("#app > div", {button: 'right'});
 }
 
 (async () => {
